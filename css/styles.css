@@ -1,4 +1,4 @@
-/****** General ***********/
+/************************************************************ General *****************************************************************/
 * {
   font-family: "Raleway", sans-serif;
 }
@@ -61,7 +61,7 @@ a {
   color: var(--main-bg-color);
 }
 
-/****** Header *****/
+/****************** Header ******************/
 nav {
   display: flex;
   justify-content: space-between;
@@ -92,9 +92,9 @@ nav {
   color: var(--main-color);
 }
 
-/****** Section 1 Main *****/
+/************************************************************ Section 1 Main **********************************************************/
 
-/****** Title *****/
+/****************** Title ******************/
 .filters {
   display: flex;
   flex-direction: column;
@@ -106,11 +106,11 @@ nav {
 }
 .container-title p {
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
   margin-top: 10px;
 }
 
-/****** Search bar *****/
+/****************** Search bar ******************/
 
 /* Style de base pour aligner le formulaire */
 form {
@@ -156,7 +156,7 @@ input[type="search"]::placeholder {
   font-weight: 900;
 }
 
-button {
+.btn-search-bar {
   padding: 10px 20px;
   border: none;
   background-color: var(--main-color);
@@ -170,7 +170,7 @@ button {
   height: 100%;
 }
 
-/****** Filter ***********/
+/****************** Filter ******************/
 
 .container-filters {
   display: flex;
@@ -201,7 +201,7 @@ button {
   transition: background-color 0.3s, color 0.3s; /* Transition douce pour le survol/actif */
   margin: 0 8px;
   font-weight: 600;
-  height: 25px;
+  height: 30px;
 }
 
 /* Style pour les icônes à l'intérieur des boutons */
@@ -233,7 +233,44 @@ button {
   color: var(---black); /* Texte blanc au survol */
 }
 
-/****** Section 2 Main ***********/
+/****************** Infos ******************/
+
+.info {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px; /* ajoutez de l'espace entre l'icône et le texte */
+}
+
+.info-container .fa-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--border-filter-color);
+  border-radius: 100%; /* rend l'arrière-plan de l'icône circulaire */
+  padding: 5px; /* espace autour de l'icône */
+  font-size: 13px; /* la taille de l'icône */
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}
+
+.info-container .fa-info:hover {
+  background-color: var(--filter-bg-color);
+}
+
+.info span {
+  font-weight: 500;
+}
+
+/************************************************************************ Section 2 Main ************************************************************************/
 .hebergements-and-populaires {
   display: flex;
   justify-content: space-between;
@@ -246,12 +283,81 @@ button {
   box-sizing: border-box;
 }
 
-/****** Hebergements ***********/
+/****************** Hebergements ******************/
 .hebergements {
   width: 65%;
 }
 
-/****** Populaires ***********/
+/****************** Title ******************/
+.tilte-hebergements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.tilte-hebergements h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+/****************** Cards ******************/
+
+.cards-hebergements {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+}
+
+.cards-hebergements .card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  width: 95%;
+  height: 220px;
+  min-width: 170px;
+}
+
+.cards-hebergements img {
+  width: 100%;
+  height: 120px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.cards-hebergements .card-content {
+  width: 100%;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.cards-hebergements .card-title {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.cards-hebergements .card-subtitle {
+  margin: 0;
+}
+
+.cards-hebergements .card-rating {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/****************** Button ******************/
+.btn-hebergements {
+  margin-top: 30px;
+  border: none;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/****************** Populaires ******************/
 .populaires {
   width: 32%;
 }
@@ -298,7 +404,7 @@ button {
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
-/****** Media queries ***********/
+/************************************************************************ Media queries ************************************************************************/
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
   .hebergements-and-populaires {
