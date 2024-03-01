@@ -7,6 +7,9 @@
   --main-color: #0065fc;
   --main-bg-color: #f2f2f2;
   --filter-bg-color: #deebff;
+  --border-filter-color: #d9d9d9;
+  ---black: #000;
+  --white: #fff;
 }
 
 .fa-solid {
@@ -16,7 +19,6 @@
 body {
   display: flex;
   justify-content: center;
-  margin-top: 0;
 }
 
 .main-container {
@@ -37,7 +39,7 @@ a {
 }
 
 .card {
-  background-color: white;
+  background-color: var(--white);
   border-radius: 20px;
   padding: 5px;
   filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
@@ -73,18 +75,16 @@ nav {
   align-items: center;
 }
 
-.p {
+.link {
   display: flex;
+  justify-content: space-around;
+  width: 20%;
 }
 
 .p .p-nav {
   display: flex;
   margin-top: 0;
-  padding-top: 5px;
-}
-
-.p p:first-child {
-  margin-right: 30px;
+  padding-top: 15px;
 }
 
 .p p:hover {
@@ -92,90 +92,148 @@ nav {
   color: var(--main-color);
 }
 
-/****** Hébergement vacances *****/
+/****** Section 1 Main *****/
 
-/****** Section 1 *****/
+/****** Title *****/
 .filters {
   display: flex;
   flex-direction: column;
 }
-.section-1 h1 {
+.container-title h1 {
   font-size: 20px;
+  font-weight: 900;
   margin-bottom: 5px;
 }
-.section-1 p {
+.container-title p {
   font-size: 15px;
-  margin-top: 5px;
+  font-weight: 400;
+  margin-top: 10px;
 }
 
-/****** Section 2 *****/
+/****** Search bar *****/
 
-.container-search {
+/* Style de base pour aligner le formulaire */
+form {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0;
+  margin-top: 15px;
 }
 
-.search-bar {
+/* Style pour la boîte de recherche */
+.search-box {
   display: flex;
   align-items: center;
-  background-color: #f2f2f2;
-  border-radius: 18px;
-  height: 3rem;
-  width: 25%;
+  background-color: var(--white);
+  border-radius: 15px;
+  border: 1px solid var(--main-bg-color);
+  overflow: hidden;
+  background-color: var(--main-bg-color);
+  width: 330px;
+  height: 40px;
 }
 
-.search-bar-1 {
-    padding: 20px;
-    font-size: 1.2rem;
+/* Style pour l'icône de recherche */
+.fa-location-dot {
+  color: var(---black);
+  margin-right: 15px;
+  margin-left: 15px;
+  font-size: 20px;
 }
 
-.search-bar-2 {
-    height: 100%;
-    width: 50%;
+/* Style du champ de recherche */
+input[type="search"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: var(---black);
+  width: 185px;
+  padding: 0 20px;
+  height: 100%;
 }
 
-.search-bar input {
-    border: none;
-    outline: none;
-    height: 100%;
-    width: 100%;
-    display: flex;
-}
-  
-#location::placeholder {
-    color: #000000; 
-    font-size: 15px;
-    font-weight: 900;
-    display: flex;
-    padding-left: 15px;
+input[type="search"]::placeholder {
+  color: var(---black);
+  font-weight: 900;
 }
 
-.search-bar-3 {
-    width: 40%;
-    height: 100%;
-    text-align: center;
-    position: relative;
-    border-radius: inherit;
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--main-color);
+  color: var(--filter-bg-color);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  margin-left: -20px;
+  height: 100%;
 }
 
-.search-bar-3 button {
-    margin: auto;
-    cursor: pointer;
-    border: none;
-    height: 100%;
-    width: 100%;
-    border-radius: 0 15px 15px 0;
-    padding-left: 10px;
-    background-color: var(--main-color);
-    font-size: 16px;
-    font-weight: 500;
-    color: white;
+/****** Filter ***********/
+
+.container-filters {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 15px;
 }
 
+.container-filters h2 {
+  font-size: 20px;
+  margin-right: 15px;
+}
 
-/****** Hebergements And Populaires ***********/
+/* Style pour les boutons de filtre */
+.filter-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border-filter-color); /* Bordure grise pour les boutons non actifs */
+  background-color: var(--white); /* Fond blanc pour les boutons non actifs */
+  color: var(---black); /* Texte noir pour les boutons non actifs */
+  margin-right: 8px; /* Espacement entre les boutons */
+  padding: 5px 15px; /* Padding à l'intérieur des boutons */
+  border-radius: 50px; /* Bordures arrondies */
+  cursor: pointer; /* Curseur en forme de pointeur */
+  font-size: 14px; /* Taille du texte */
+  transition: background-color 0.3s, color 0.3s; /* Transition douce pour le survol/actif */
+  margin: 0 8px;
+  font-weight: 600;
+  height: 25px;
+}
+
+/* Style pour les icônes à l'intérieur des boutons */
+.filter-btn i {
+  margin-right: 10px; /* Espace entre l'icône et le texte */
+}
+
+/* Style pour le bouton actif */
+.filter-btn.active {
+  border-color: var(
+    --border-filter-color
+  ); /* Bordure bleue pour le bouton actif */
+  background-color: var(--filter-bg-color); /* Fond bleu pour le bouton actif */
+  color: var(---black); /* Texte blanc pour le bouton actif */
+}
+
+/* Nouveau style pour l'icône de la flèche */
+.filter-btn .arrow-icon {
+  position: absolute;
+  bottom: -10px; /* Ajustez la valeur en fonction de la taille de votre bouton */
+  right: -23px; /* Ajustez la valeur en fonction de la taille de votre bouton */
+  font-size: 25px; /* Ajustez la taille de l'icône si nécessaire */
+  transform: rotate(-20deg);
+}
+
+/* Style pour les boutons au survol */
+.filter-btn:hover {
+  background-color: var(--filter-bg-color); /* Fond bleu au survol */
+  color: var(---black); /* Texte blanc au survol */
+}
+
+/****** Section 2 Main ***********/
 .hebergements-and-populaires {
   display: flex;
   justify-content: space-between;

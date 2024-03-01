@@ -28,44 +28,54 @@
             <img src="images/logo/Booki.png" height="20px" alt="logo-Booki" />
           </div>
 
-          <a href="" class="p">
-            <p class="p-nav">Hébergement</p>
-            <p class="p-nav">Activités</p>
-          </a>
+          <div class="link">
+            <a href="#" class="p link-to-section" data-section="hebergements">
+              <p class="p-nav">Hébergement</p>
+            </a>
+            <a href="#" class="p link-to-section" data-section="">
+              <p class="p-nav">Activités</p>
+            </a>
+          </div>
         </nav>
       </header>
       <main>
         <div class="filters">
-          <div class="section-1">
+          <div class="container-title">
             <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
             <p>En plein centre-ville ou en pleine nature</p>
           </div>
-          <div class="section-2">
-            <div class="container-search">
-                <div class="search-bar">
-                    <div class="search-bar-1">
-                        <i class="fas fa-map-marker-alt" style="color: black"></i>
-                    </div>
-                    <div class="search-bar-2">
-                        <input
-                        type="text"
-                        id="location"
-                        placeholder="Marseille, France"
-                        readonly
-                        />
-                    </div>
-                    <div class="search-bar-3">
-                        <button id="search-button">Rechercher</button>
-                    </div>
-                </div>
+
+          <div class="search-bar">
+            <form action="/search" method="get">
+              <div class="search-box">
+                <i class="fa-solid fa-location-dot"></i>
+                <input
+                  type="search"
+                  name="q"
+                  placeholder="Marseille, France"
+                  aria-label="Recherche"
+                />
+                <button type="submit">Rechercher</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="container-filters">
+            <h2>Filtres</h2>
+            <div class="filter-btn">
+              <i class="fa-solid fa-money-bill-wave"></i>Économique
+            </div>
+            <div class="filter-btn">
+              <i class="fa-solid fa-person"></i>Familial
+            </div>
+            <div class="filter-btn">
+              <i class="fa-solid fa-heart"></i>Romantique
+            </div>
+            <div class="filter-btn active">
+              <i class="fa-solid fa-fire"></i>Nos pépites
+              <i class="fa-solid fa-arrow-pointer arrow-icon"></i>
             </div>
           </div>
-          <div class="section-3">
-            <div class="filter-container">
-              <h3>Filtres</h3>
-            </div>
-          </div>
-          <div class="section-4"></div>
         </div>
 
         <div class="hebergements-and-populaires">
