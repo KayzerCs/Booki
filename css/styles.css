@@ -297,7 +297,7 @@ input[type="search"]::placeholder {
 }
 .tilte-hebergements h2 {
   margin: 0;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 /****************** Cards ******************/
@@ -315,7 +315,6 @@ input[type="search"]::placeholder {
   margin-top: 10px;
   width: 95%;
   height: 220px;
-  min-width: 170px;
 }
 
 .cards-hebergements img {
@@ -402,7 +401,41 @@ input[type="search"]::placeholder {
   margin-bottom: 5px;
 }
 
-/* Le code ci-dessous correspond à la version responsive uniquement */
+/************************************************************************ Section 3 Activité à Marseille ************************************************************************/
+.activity {
+  padding: 35px;
+}
+
+/****************** Title ******************/
+.tilte-activity h2 {
+  font-size: 20px;
+}
+
+/****************** Cards Activity ******************/
+.cards-activity {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.cards-activity .card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  width: 90%;
+}
+
+.cards-activity img {
+  width: 100%;
+  height: 350px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.cards-activity .card-title {
+  padding-left: 15px;
+  font-size: 14px;
+}
 
 /************************************************************************ Media queries ************************************************************************/
 /* Medium devices (tablets, less/equal than 1024px) */
