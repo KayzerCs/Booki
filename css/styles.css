@@ -2,6 +2,9 @@
 * {
   font-family: "Raleway", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
   --main-color: #0065fc;
