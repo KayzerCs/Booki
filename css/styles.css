@@ -22,6 +22,7 @@ html {
 body {
   display: flex;
   justify-content: center;
+  margin: 0;
 }
 
 .body-container {
@@ -162,7 +163,7 @@ form {
 }
 
 input:focus::placeholder {
-  opacity: 0; 
+  opacity: 0;
 }
 
 .btn-search-bar {
@@ -177,6 +178,10 @@ input:focus::placeholder {
   box-shadow: none;
   margin-left: -20px;
   height: 100%;
+}
+
+.icon {
+  display: none;
 }
 
 /****************** Filter ******************/
@@ -545,12 +550,12 @@ input:focus::placeholder {
 
 /************************************* Small devices (phones, less than 768px) *************************************/
 @media (max-width: 767.98px) {
-  /****************** Body ******************/ 
+  /****************** Body ******************/
   .body-container {
     padding: 0;
     margin: 0;
   }
-
+ 
   /****************** Nav ******************/
   nav {
     flex-direction: column;
@@ -580,36 +585,76 @@ input:focus::placeholder {
   }
 
   .p .p-nav.active-1:hover::after {
-    content: ''; 
-    display: block; 
+    content: "";
+    display: block;
     height: 2px;
-    background-color: var(--main-color); 
-    width: 100%; 
-    position: absolute; 
-    bottom: 0; 
-    left: -5px; 
-    transform: translateX(0%); 
+    background-color: var(--main-color);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: -5px;
+    transform: translateX(0%);
   }
   .p .p-nav.active-2:hover::after {
-    content: ''; 
-    display: block; 
-    height: 2px; 
-    background-color: var(--main-color); 
-    width: 150%; 
-    position: absolute; 
-    bottom: 0; 
-    left: 74%; 
-    transform: translateX(-50%); 
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: var(--main-color);
+    width: 150%;
+    position: absolute;
+    bottom: 0;
+    left: 74%;
+    transform: translateX(-50%);
   }
 
   /****************** Main ******************/
   main {
-    margin-top: 25px;
-    padding: 0 10px;
-    box-sizing: border-box;
+    box-sizing: content-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  /****************** Search Bar ******************/
+  form {
+    width: 100%;
+  }
+  .search-box {
+    height: 45px;
+    width: 99%;
+    overflow: visible;
+  }
+  .btn-search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    width: 45px;
+    box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.301);
+  }
+  .btn-text {
+    display: none; /* Cache le texte sur les petits écrans */
+  }
+  .icon {
+    display: inline-block; /* Affiche l'icône sur les petits écrans */
+  }
+  .icon i {
+    color: var(--white);
   }
 
   /****************** Filters ******************/
+  .filters {
+    margin: 15px;
+  }
+  .container-filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .container-filter-btn {
+    padding-bottom: 15px;
+  }
+  .filter-btn {
+    min-width: 110px;
+  }
   .filter-btn.active {
     border-color: var(--border-filter-color);
     background-color: var(--white);
@@ -624,5 +669,30 @@ input:focus::placeholder {
     border-color: var(--border-filter-color);
     background-color: var(--filter-bg-color);
     color: var(---black);
+  }
+
+  /****************** Hébergement and populaire ******************/
+  .hebergements-and-populaires {
+    flex-direction: column-reverse;
+  }
+  .hebergements-and-populaires section {
+    padding: 15px;
+    border-radius: 0;
+  }
+  /****************** Populaire ******************/
+  .populaires {
+    margin-top: 0;
+  }
+  /****************** Hébergement ******************/
+  .hebergements-and-populaires section.hebergements {
+    background-color: var(--white);
+  } 
+  .tilte-hebergements {
+    margin-top: 25px;
+  }
+  /****************** Footer ******************/
+  .container-footer {
+    flex-direction: column;
+    gap: 15px;
   }
 }
