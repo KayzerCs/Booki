@@ -21,7 +21,7 @@
   </head>
 
   <body>
-    <div class="main-container">
+    <div class="body-container">
       <header>
         <nav>
           <div class="logo">
@@ -34,14 +34,14 @@
               class="p link-to-section"
               data-section="hebergements"
             >
-              <p class="p-nav">Hébergement</p>
+              <p class="p-nav active-1">Hébergement</p>
             </a>
             <a
               href="#activity"
               class="p link-to-section"
               data-section="activity"
             >
-              <p class="p-nav">Activités</p>
+              <p class="p-nav active-2">Activités</p>
             </a>
           </div>
         </nav>
@@ -49,7 +49,9 @@
       <main>
         <div class="filters">
           <div class="container-title">
-            <h1 class="section-title">Trouvez votre hébergement pour des vacances de rêve</h1>
+            <h1 class="section-title">
+              Trouvez votre hébergement pour des vacances de rêve
+            </h1>
             <p>En plein centre-ville ou en pleine nature</p>
           </div>
 
@@ -57,7 +59,7 @@
             <form action="/search" method="get">
               <div class="search-box">
                 <i class="fa-solid fa-location-dot"></i>
-                <input
+                <input class="search-input"
                   type="search"
                   name="q"
                   placeholder="Marseille, France"
@@ -71,31 +73,30 @@
           <div class="container-title-filters">
             <h2 class="section-title">Filtres</h2>
             <div class="container-filters">
-              
-              <div class="filter-btn">
+              <a href="#" class="filter-btn">
                 <i class="fa-solid fa-money-bill-wave"></i>Économique
-              </div>
-              <div class="filter-btn">
+              </a>
+              <a href="#" class="filter-btn">
                 <i class="fa-solid fa-person"></i>Familial
-              </div>
-              <div class="filter-btn">
+              </a>
+              <a href="#" class="filter-btn active-2">
                 <i class="fa-solid fa-heart"></i>Romantique
-              </div>
-              <div class="filter-btn active">
+              </a>
+              <a href="#" class="filter-btn active">
                 <i class="fa-solid fa-fire"></i>Nos pépites
                 <i class="fa-solid fa-arrow-pointer arrow-icon"></i>
-              </div>
+              </a>
             </div>
           </div>
-            
-            <div class="info">
-              <div class="info-container">
-                <i class="fa-solid fa-info"></i>
-              </div>
-              <span>Plus de 500 logements sont disponibles dans cette ville</span>
-            </div>
+
+          <div class="info">
+            <a href="#" class="info-container">
+              <i class="fa-solid fa-info"></i>
+            </a>
+            <span>Plus de 500 logements sont disponibles dans cette ville</span>
+          </div>
         </div>
-          
+
         <div class="hebergements-and-populaires">
           <section id="hebergements" class="hebergements">
             <div class="tilte-hebergements">
@@ -271,8 +272,10 @@
                 </article>
               </a>
             </div>
-
-            <button class="btn-hebergements">Afficher plus</button>
+            
+            <a href="#">
+              <button class="btn-hebergements">Afficher plus</button>
+            </a>
           </section>
 
           <section class="populaires">
