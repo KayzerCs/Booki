@@ -92,6 +92,7 @@ nav {
   display: flex;
   margin-top: 0;
   padding-top: 15px;
+  border-top: 2px solid transparent;
 }
 
 .p p:hover {
@@ -206,44 +207,35 @@ input:focus::placeholder {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--border-filter-color); 
-  background-color: var(--white); 
-  color: var(---black); 
-  margin-right: 8px; 
-  padding: 5px 15px; 
-  border-radius: 50px; 
-  cursor: pointer; 
-  font-size: 14px; 
-  transition: background-color 0.3s, color 0.3s; 
+  border: 2px solid var(--border-filter-color);
+  background-color: var(--white);
+  color: var(---black);
+  margin-right: 8px;
+  padding: 5px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s;
   margin: 0 8px;
   font-weight: 600;
   height: 30px;
 }
 
 .filter-btn i {
-  margin-right: 10px; 
+  margin-right: 10px;
   font-size: 18px;
 }
 
 .filter-btn.active {
-  border-color: var(
-    --border-filter-color
-  ); 
-  background-color: var(--filter-bg-color); 
-  color: var(---black); 
+  border-color: var(--border-filter-color);
+  background-color: var(--filter-bg-color);
+  color: var(---black);
 }
 
-.filter-btn .arrow-icon {
-  position: absolute;
-  bottom: -10px; 
-  right: -23px; 
-  font-size: 25px; 
-  transform: rotate(-20deg);
-}
 
 .filter-btn:hover {
-  background-color: var(--filter-bg-color); 
-  color: var(---black); 
+  background-color: var(--filter-bg-color);
+  color: var(---black);
 }
 
 /****************** Infos ******************/
@@ -367,7 +359,7 @@ input:focus::placeholder {
   font-weight: 600;
   font-size: 18px;
   cursor: pointer;
-  background-color: var(--white);
+  background-color: transparent;
 }
 
 /****************** Populaires ******************/
@@ -421,12 +413,15 @@ input:focus::placeholder {
 .activitys {
   padding: 35px;
 }
+.activity {
+  padding: 0;
+}
 
 /****************** Cards Activity ******************/
 .cards-activity {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 15px;
+  gap: 25px;
 }
 
 .cards-activity .card {
@@ -481,7 +476,6 @@ input:focus::placeholder {
 
 /************************************* Medium devices (tablets, less/equal than 1024px) *************************************/
 @media (max-width: 1024px) {
-
   /****************** Nav ******************/
   .container-title-filters {
     display: flex;
@@ -490,11 +484,6 @@ input:focus::placeholder {
   .container-filters {
     margin-top: 0;
   }
-  /****************** Filters ******************/
-  .filter-btn .arrow-icon {
-    opacity: -1;
-  }
-
   /****************** Hébergements ******************/
   .hebergements-and-populaires {
     flex-direction: column;
@@ -528,15 +517,15 @@ input:focus::placeholder {
   }
   /****************** Activitys ******************/
   .cards-activity .card {
-    height: 200px;
-    min-height: 200px;
+    height: 250px;
+    min-height: 250px;
   }
 
   .cards-activity img {
     width: 100%;
     height: 90%;
-    max-height: 140px;
-    min-height: 140px;
+    max-height: 190px;
+    min-height: 190px;
   }
 
   .cards-activity .card-title {
@@ -581,10 +570,35 @@ input:focus::placeholder {
     justify-content: center;
     padding-bottom: 15px;
     position: relative;
+    border-top: none;
   }
 
   .p .p-nav:hover {
     border-top: none;
+  }
+
+  .p .p-nav.active-1::before {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: transparent;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: -5px;
+    transform: translateX(0%);
+  }
+
+  .p .p-nav.active-2::before {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: transparent;
+    width: 150%;
+    position: absolute;
+    bottom: 0;
+    left: 74%;
+    transform: translateX(-50%);
   }
 
   .p .p-nav.active-1:hover::after {
@@ -635,10 +649,10 @@ input:focus::placeholder {
     box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.301);
   }
   .btn-text {
-    display: none; 
+    display: none;
   }
   .icon {
-    display: inline-block; 
+    display: inline-block;
   }
   .icon i {
     color: var(--white);
@@ -655,12 +669,17 @@ input:focus::placeholder {
   .container-filter-btn {
     display: flex;
     padding-bottom: 15px;
+    width: 100%;
   }
   .filter-btn {
-    width: 115px;
-    min-width: 110px;
+    width: 50%;
     padding: 8px 5px;
   }
+
+  .filter-btn.active-4 {
+    width: 100%;
+  }
+
   .filter-btn.active {
     border-color: var(--border-filter-color);
     background-color: var(--white);
@@ -669,8 +688,10 @@ input:focus::placeholder {
   .filter-btn.active-3 {
     display: flex;
     justify-content: flex-start;
-    padding-left: 10px;
-    width: 110px;
+    width: 100%;
+  }
+  .filter-btn.active-3 i {
+    margin-left: 20px;
   }
 
   .filter-btn.active:hover {
