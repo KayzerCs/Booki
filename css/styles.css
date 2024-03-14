@@ -95,7 +95,7 @@ nav {
   border-top: 2px solid transparent;
 }
 
-.p p:hover {
+.p span:hover {
   border-top: 2px solid var(--main-color);
   color: var(--main-color);
 }
@@ -188,7 +188,7 @@ input:focus::placeholder {
   gap: 1%;
 }
 
-.container-title-filters h2 {
+.container-title-filters p {
   align-items: center;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -224,12 +224,6 @@ input:focus::placeholder {
 .filter-btn i {
   margin-right: 10px;
   font-size: 18px;
-}
-
-.filter-btn.active {
-  border-color: var(--border-filter-color);
-  background-color: var(--filter-bg-color);
-  color: var(--black);
 }
 
 .filter-btn:hover {
@@ -318,7 +312,6 @@ input:focus::placeholder {
   flex-direction: column;
   margin-top: 10px;
   width: 95%;
-  height: 220px;
 }
 
 .cards-hebergements img {
@@ -460,7 +453,7 @@ input:focus::placeholder {
   flex-direction: column;
   padding: 0 10px;
 }
-.footer-section h3 {
+.footer-section h2 {
   margin-bottom: 15px;
   font-size: 17px;
   color: var(--black);
@@ -516,6 +509,10 @@ input:focus::placeholder {
     font-size: 13px;
   }
   /****************** Activitys ******************/
+  #card-title-hebergement {
+    font-size: 14px;
+  }
+
   .cards-activity .card {
     height: 250px;
     min-height: 250px;
@@ -575,53 +572,7 @@ input:focus::placeholder {
 
   .p .p-nav:hover {
     border-top: none;
-  }
-
-  .p .p-nav.active-1::before {
-    content: "";
-    display: block;
-    height: 2px;
-    background-color: transparent;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: -5px;
-    transform: translateX(0%);
-  }
-
-  .p .p-nav.active-2::before {
-    content: "";
-    display: block;
-    height: 2px;
-    background-color: transparent;
-    width: 150%;
-    position: absolute;
-    bottom: 0;
-    left: 74%;
-    transform: translateX(-50%);
-  }
-
-  .p .p-nav.active-1:hover::after {
-    content: "";
-    display: block;
-    height: 2px;
-    background-color: var(--main-color);
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: -5px;
-    transform: translateX(0%);
-  }
-  .p .p-nav.active-2:hover::after {
-    content: "";
-    display: block;
-    height: 2px;
-    background-color: var(--main-color);
-    width: 150%;
-    position: absolute;
-    bottom: 0;
-    left: 74%;
-    transform: translateX(-50%);
+    border-bottom: 2px solid var(--main-color);
   }
 
   /****************** Main ******************/
@@ -674,34 +625,6 @@ input:focus::placeholder {
   .filter-btn {
     width: 50%;
     padding: 8px 5px;
-  }
-
-  .filter-btn.active-4 {
-    width: 100%;
-  }
-
-  .filter-btn.active {
-    border-color: var(--border-filter-color);
-    background-color: var(--white);
-    color: var(--black);
-  }
-  .filter-btn.active-3 {
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-  }
-  .filter-btn.active-3 i {
-    margin-left: 20px;
-  }
-
-  .filter-btn.active:hover {
-    background-color: var(--filter-bg-color);
-  }
-
-  .filter-btn.active-2 {
-    border-color: var(--border-filter-color);
-    background-color: var(--filter-bg-color);
-    color: var(--black);
   }
 
   /****************** Hébergement and populaire ******************/
